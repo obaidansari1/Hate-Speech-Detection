@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HateShield — Detect Hate Speech</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+    <div class="glow-orb orb3"></div>
+
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">Hate<span>Shield</span></a>
+                <div class="nav-badge">🛡️ Detection System</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-tag">Real-Time Analysis Active</div>
+            <h1>Detect <em>Hate Speech</em><br>Before It Spreads</h1>
+            <p>A smart tool that reads your text or audio and instantly tells you whether it contains harmful language.</p>
+           <a href="{{ url_for('analyzer') }}" class="hero-btn">🛡️ Try the Analyzer →</a>
+        </section>
+
+        <section class="pipeline">
+            <div class="pipeline-inner">
+                <div class="pipeline-line"></div>
+                <div class="p-step reveal-left">
+                    <div class="p-dot r">📝</div>
+                    <div><div class="p-title">You Submit Content</div><div class="p-desc">Type a message or upload an audio file.</div></div>
+                </div>
+                <div class="p-step reveal-left">
+                    <div class="p-dot r">🤖</div>
+                    <div><div class="p-title">AI Assessment</div><div class="p-desc">Our system compares patterns learned from thousands of examples.</div></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer><p>HateShield — Built with <span>❤</span> · © 2025</p></footer>
+
+    <script>
+        const obs = new IntersectionObserver((pts) => {
+            pts.forEach(p => { if(p.isIntersecting) p.target.classList.add('in'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
